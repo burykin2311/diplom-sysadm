@@ -1,0 +1,88 @@
+---
+- name: Install Elasticsearch and Kibana (7.12.0)
+  hosts: elk
+  become: yes
+  tasks:
+    - name: Install dependencies
+      apt:
+        name: [gnupg, curl, apt-transport-https, libasound2]
+        state: present
+        update_cache: yes
+
+    - name: Download Elasticsearch 7.12.0
+      get_url:
+        url: "https://mirror.yandex.ru/mirrors/elastic/7/pool/main/e/elasticsearch/elasticsearch-7.12.0-amd64.deb"
+        dest: "/tmp/elasticsearch.deb"
+        validate_certs: no
+
+    - name: Download Kibana 7.12.0
+      get_url:
+        url: "https://mirror.yandex.ru/mirrors/elastic/7/pool/main/k/kibana/kibana-7.12.0-amd64.deb"
+        dest: "/tmp/kibana.deb"
+        validate_certs: no
+
+    - name: Install packages from deb
+      apt:
+        deb: "{{ item }}"
+      loop:
+        - "/tmp/elasticsearch.deb"
+        - "/tmp/kibana.deb"
+
+    - name: Configure Elasticsearch
+      copy:
+        dest: /etc/elasticsearch/elasticsearch.yml
+        content: |
+          node.name: node-1
+          network.host: 0.0.0.0
+          discovery.type: single-node
+          xpack.security.enabled: false
+
+    - name: Set JVM Memory limits (1GB)
+      copy:
+        dest: /etc/elasticsearch/jvm.options.d/memory.options
+        content: |
+          -Xms1g
+          -Xmx1g
+
+    - name: Configure Kibana host
+      lineinfile:
+        path: /etc/kibana/kibana.yml
+        regexp: '^#?server.host:'
+        line: 'server.host: "0.0.0.0"'
+
+    - name: Start services
+      systemd:
+        name: "{{ item }}"
+        state: restarted
+        enabled: yes
+        daemon_reload: yes
+      loop: [elasticsearch, kibana]
+
+- name: Install Filebeat 7.12.0
+  hosts: web_servers
+  become: yes
+  tasks:
+    - name: Download Filebeat 7.12.0
+      get_url:
+        url: "https://mirror.yandex.ru/mirrors/elastic/7/pool/main/f/filebeat/filebeat-7.12.0-amd64.deb"
+        dest: "/tmp/filebeat.deb"
+        validate_certs: no
+
+    - name: Install Filebeat
+      apt:
+        deb: "/tmp/filebeat.deb"
+
+    - name: Configure Filebeat output
+      lineinfile:
+        path: /etc/filebeat/filebeat.yml
+        regexp: 'hosts: \["localhost:9200"\]'
+        line: '    hosts: ["192.168.10.7:9200"]'
+
+    - name: Enable Nginx module
+      shell: "filebeat modules enable nginx"
+
+    - name: Start Filebeat
+      systemd:
+        name: filebeat
+        state: restarted
+        enabled: yes
