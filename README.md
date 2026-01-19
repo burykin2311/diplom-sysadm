@@ -13,3 +13,10 @@
 ### Подключение по SSH к bastion и проверка связи между серверами. Проверка доступности узла web1 с bastion
 <img width="893" height="69" alt="6" src="https://github.com/user-attachments/assets/1effb518-6f8c-48ab-afe4-cd9d7fff8128" />
 <img width="606" height="129" alt="4" src="https://github.com/user-attachments/assets/aebc93b4-afcc-4045-a79a-1dc3de34b016" />
+
+### Ansible 
+<img width="1120" height="215" alt="7" src="https://github.com/user-attachments/assets/18ba5d5e-f00e-4714-9ca5-c0bb9160df25" />
+<img width="780" height="241" alt="hosts" src="https://github.com/user-attachments/assets/97f964f3-d0e9-4088-a254-be907328979d" />
+<img width="1200" height="401" alt="hosts ini playbook" src="https://github.com/user-attachments/assets/9dd42cec-72f1-4aa1-89aa-476fc85ff6e7" />
+
+
