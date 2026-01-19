@@ -9,3 +9,6 @@
 
 ### Проверка связи между серверами. Проверка доступности узла web1 с bastion
 <img width="606" height="129" alt="4" src="https://github.com/user-attachments/assets/aebc93b4-afcc-4045-a79a-1dc3de34b016" />
+
+### Список запущенных ВМ
+<img width="932" height="152" alt="5" src="https://github.com/user-attachments/assets/a2894d09-fa3f-45eb-bb73-4ed403895b8f" />
