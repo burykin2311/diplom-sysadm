@@ -148,7 +148,7 @@ resource "yandex_compute_snapshot_schedule" "default" {
   ]
 }
 
-# 4. Elasticsearch + Kibana (сервер логов)
+# 4. Elasticsearch + Kibana 
 resource "yandex_compute_instance" "logging" {
   name        = "logging"
   platform_id = "standard-v3"
