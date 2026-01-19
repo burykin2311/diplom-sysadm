@@ -6,7 +6,7 @@
 ### Подготовка Terraform (https://github.com/burykin2311/diplom-sysadm/tree/main/terraform)
 <img width="822" height="445" alt="2" src="https://github.com/user-attachments/assets/0152ba03-5ecd-489f-ac6a-4ce6d5a185c1" />
 <img width="860" height="616" alt="3" src="https://github.com/user-attachments/assets/97fbca80-e035-4a39-9b25-f5696a87f0f5" />
-<img width="800" height="697" alt="ELASTIC" src="https://github.com/user-attachments/assets/777fad46-713e-4cbf-a7c7-b6fba3b29d90" />
+
 
 ### Список запущенных ВМ
 <img width="932" height="152" alt="5" src="https://github.com/user-attachments/assets/a2894d09-fa3f-45eb-bb73-4ed403895b8f" />
@@ -33,5 +33,3 @@
 
 ### Elasticsearch+Kibana
 <img width="1201" height="653" alt="ELK" src="https://github.com/user-attachments/assets/36e7c10d-eced-4190-992f-3f3dfe025f98" />
-<img width="800" height="697" alt="ELASTIC" src="https://github.com/user-attachments/assets/039dbc3e-7f56-458a-9204-e<img width="1212" height="684" alt="KIBANA" src="https://github.com/user-attachments/assets/d98f3edc-757f-413a-a8a1-eb67357ce3cb" />
-af2d2704a3d" />
