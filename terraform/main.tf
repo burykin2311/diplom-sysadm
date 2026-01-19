@@ -147,3 +147,28 @@ resource "yandex_compute_snapshot_schedule" "default" {
     yandex_compute_instance.zabbix.boot_disk[0].disk_id
   ]
 }
+
+# 4. Elasticsearch + Kibana (сервер логов)
+resource "yandex_compute_instance" "logging" {
+  name        = "logging"
+  platform_id = "standard-v3"
+  scheduling_policy { preemptible = true }
+  resources {
+    cores         = 2
+    memory        = 4
+    core_fraction = 20
+  }
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.id
+      size     = 15
+    }
+  }
+  network_interface {
+    subnet_id = yandex_vpc_subnet.public.id
+    nat       = true
+  }
+  metadata = {
+    user-data = "${file("./meta.yaml")}"
+  }
+}
