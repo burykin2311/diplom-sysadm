@@ -31,3 +31,4 @@
 <img width="1023" height="368" alt="zabbix 9" src="https://github.com/user-attachments/assets/b68b116a-edf5-4dd1-a585-d3b0f77d0463" />
 
 ### Elasticsearch+Kibana
+<img width="1201" height="653" alt="ELK" src="https://github.com/user-attachments/assets/36e7c10d-eced-4190-992f-3f3dfe025f98" />
