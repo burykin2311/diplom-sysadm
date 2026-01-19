@@ -33,3 +33,8 @@
 
 ### Elasticsearch+Kibana
 <img width="1201" height="653" alt="ELK" src="https://github.com/user-attachments/assets/36e7c10d-eced-4190-992f-3f3dfe025f98" />
+<img width="800" height="697" alt="ELASTIC" src="https://github.com/user-attachments/assets/04769227-e4dc-4ed1-8d70-cbfc93dee5b9" />
+<img width="1212" height="684" alt="KIBANA" src="https://github.com/user-attachments/assets/fd75033d-dcb3-4921-84a0-005d2d664644" />
+
+<img width="1213" height="389" alt="YC" src="https://github.com/user-attachments/assets/66b34c38-c8aa-4351-88b3-cfe4eea858d6" />
+
